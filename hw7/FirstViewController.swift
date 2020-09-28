@@ -11,30 +11,29 @@ import UIKit
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var firstLabelVC: UILabel!
-    var firstLabel = ""
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstLabelVC.text = firstLabel
+      
+        
         // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if let vc1 = segue.destination as? SecondViewController, segue.identifier == "Next" {
-        vc1.secondLabel = firstLabel
+        guard let unwrappedFirstLabel = firstLabelVC.text else { return }
+         vc1.secondLabel = unwrappedFirstLabel
+         vc1.delegate = self
         
-      if firstLabel == "Выбран Синий" {
-            vc1.view.backgroundColor = .blue
-        }else if firstLabel == "Выбран Красный"{
-            vc1.view.backgroundColor = .red
-        }else if firstLabel == "Выбран Зеленый"{
-            vc1.view.backgroundColor = .green
-            }
-      
         }
         
     }
     
-    
-   
+}
+
+extension FirstViewController: SecondControllerDelegate {
+    func labelColor(_ color: String) {
+    firstLabelVC.text = "\(color)"
+    }
 }

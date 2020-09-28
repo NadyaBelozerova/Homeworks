@@ -7,9 +7,19 @@
 //
 
 import UIKit
+protocol ChildViewControllerDelegate: AnyObject {
+    
+    func changeColor()
+    func changeColor2()
+    func changeColor3()
+    
+    
+}
 
 class ChildViewController: UIViewController {
-
+    
+weak var delegate: ChildViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,17 +27,19 @@ class ChildViewController: UIViewController {
     }
     
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if let vc = segue.destination as? ParentViewController, segue.identifier == "Green" {
-             vc.view.backgroundColor = .green
-          
-         }else if let vc = segue.destination as? ParentViewController, segue.identifier == "Yellow"{
-             vc.view.backgroundColor = .yellow
-      
-         }else if let vc = segue.destination as? ParentViewController, segue.identifier == "Purple"{
-             vc.view.backgroundColor = .purple
-       
-         }
-     }
-
+    @IBAction func greenButton() {
+        delegate?.changeColor()
+    }
+    
+    
+    @IBAction func yellowButton() {
+        delegate?.changeColor2()
+    }
+    
+    
+    
+    @IBAction func purpleButton() {
+        delegate?.changeColor3()
+    }
+    
 }

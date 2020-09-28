@@ -10,25 +10,51 @@ import UIKit
 
 class ParentViewController: UIViewController {
 
+    var childController: ChildViewController?
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Next2", let childController = segue.destination as? ChildViewController {
+            self.childController = childController
+            childController.delegate = self
+        }
+        
+    }
+
+    
+    
+    @IBAction func greenButton() {
+        childController?.view.backgroundColor = .green
+    }
+    
+    
+    @IBAction func yellowButton() {
+        childController?.view.backgroundColor = .yellow
+    }
+
+    
+    @IBAction func purpleButton() {
+        childController?.view.backgroundColor = .purple
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let vc1 = segue.destination as? ChildViewController, segue.identifier == "Green1" {
-                vc1.view.backgroundColor = .green
-             
-            }else if let vc1 = segue.destination as? ChildViewController, segue.identifier == "Yellow1"{
-                vc1.view.backgroundColor = .yellow
-         
-            }else if let vc1 = segue.destination as? ChildViewController, segue.identifier == "Purple1"{
-                vc1.view.backgroundColor = .purple
-          
-            }
-        }
-
 
 }
+
+extension ParentViewController: ChildViewControllerDelegate {
+    func changeColor() {
+        view.backgroundColor = .green
+    }
+    func changeColor2() {
+        view.backgroundColor = .yellow
+    }
+    func changeColor3() {
+        view.backgroundColor = .purple
+    }
+}
+
+

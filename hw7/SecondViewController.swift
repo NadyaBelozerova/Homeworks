@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol SecondControllerDelegate{
+    func labelColor(_ color: String)
+}
+
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var secondLabelVC: UILabel!
     var secondLabel = ""
-    
+    var color = ""
+
+    var delegate: SecondControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +26,28 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       if let vc = segue.destination as? FirstViewController, segue.identifier == "Red" {
-           vc.firstLabel = "Выбран Красный"
-        
-       }else if let vc = segue.destination as? FirstViewController, segue.identifier == "Blue"{
-           vc.firstLabel = "Выбран Синий"
     
-       }else if let vc = segue.destination as? FirstViewController, segue.identifier == "Green"{
-           vc.firstLabel = "Выбран Зеленый"
-     
-       }
-   }
+    @IBAction func greenButton() {
+        color = "Выбран зеленый"
+        delegate?.labelColor(color)
+        dismiss(animated: true, completion: nil)
+    }
+    
+
+    @IBAction func blueButton() {
+        color = "Выбран синий"
+        delegate?.labelColor(color)
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func redButton() {
+        color = "Выбран красный"
+        delegate?.labelColor(color)
+        dismiss(animated: true, completion: nil)
+        
+    }
 
  }
 
