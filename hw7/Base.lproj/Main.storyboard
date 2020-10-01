@@ -60,22 +60,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi6-eb-Ieq">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi6-eb-Ieq">
                                 <rect key="frame" x="124" y="368" width="175" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Выбрать зеленый"/>
                                 <connections>
-                                    <action selector="greenButton" destination="rE3-Ww-7au" eventType="touchUpInside" id="vRf-Yb-h89"/>
+                                    <action selector="buttonPressed:" destination="rE3-Ww-7au" eventType="touchUpInside" id="knU-0Q-OEC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnC-Bs-c4u">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnC-Bs-c4u">
                                 <rect key="frame" x="135" y="438" width="152" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Выбрать синий"/>
                                 <connections>
-                                    <action selector="blueButton" destination="rE3-Ww-7au" eventType="touchUpInside" id="Fvh-fH-dYq"/>
+                                    <action selector="buttonPressed:" destination="rE3-Ww-7au" eventType="touchUpInside" id="3lf-QQ-o0z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ld-Vy-88A">
@@ -84,7 +84,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Выбрать красный"/>
                                 <connections>
-                                    <action selector="redButton" destination="rE3-Ww-7au" eventType="touchUpInside" id="Tef-tK-8ok"/>
+                                    <action selector="buttonPressed:" destination="rE3-Ww-7au" eventType="touchUpInside" id="Izn-jp-uuU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -115,31 +115,31 @@
                                     <segue destination="ROj-MT-FKR" kind="embed" identifier="Next2" id="ANf-Mn-3yY"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-IE-wwE">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-IE-wwE">
                                 <rect key="frame" x="33" y="208" width="80" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Зеленый"/>
                                 <connections>
-                                    <action selector="greenButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="4vb-0N-dTP"/>
+                                    <action selector="greenButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="2Vf-M3-eEJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmE-bY-SEA">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmE-bY-SEA">
                                 <rect key="frame" x="150" y="208" width="75" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Желтый"/>
                                 <connections>
-                                    <action selector="yellowButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="u6e-vf-2Tb"/>
+                                    <action selector="yellowButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="3zf-o8-wfZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-n4-AfX">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-n4-AfX">
                                 <rect key="frame" x="250" y="208" width="105" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Пурпурный"/>
                                 <connections>
-                                    <action selector="purpleButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="hDV-JO-UL4"/>
+                                    <action selector="purpleButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="YMz-qn-0Kw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -161,31 +161,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dX-SA-pk4">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dX-SA-pk4">
                                 <rect key="frame" x="150" y="113" width="80" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Зеленый"/>
                                 <connections>
-                                    <action selector="greenButton" destination="ROj-MT-FKR" eventType="touchUpInside" id="COg-Vz-KFF"/>
+                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="mDG-u5-tjg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5j-pC-QLV">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5j-pC-QLV">
                                 <rect key="frame" x="156" y="199" width="75" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Желтый"/>
                                 <connections>
-                                    <action selector="yellowButton" destination="ROj-MT-FKR" eventType="touchUpInside" id="V3X-78-XcM"/>
+                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="5sE-ln-ocY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-DY-hC6">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-DY-hC6">
                                 <rect key="frame" x="144" y="276" width="105" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Пурпурный"/>
                                 <connections>
-                                    <action selector="purpleButton" destination="ROj-MT-FKR" eventType="touchUpInside" id="ffG-dM-Mp4"/>
+                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="hdF-df-14Q"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -12,28 +12,30 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var firstLabelVC: UILabel!
    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-        
-        // Do any additional setup after loading the view.
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if let vc1 = segue.destination as? SecondViewController, segue.identifier == "Next" {
-        guard let unwrappedFirstLabel = firstLabelVC.text else { return }
-         vc1.secondLabel = unwrappedFirstLabel
-         vc1.delegate = self
-        
+      guard let unwrappedFirstLabel = firstLabelVC.text else { return }
+      vc1.secondLabel = unwrappedFirstLabel
+      vc1.delegate = self
         }
-        
     }
-    
 }
 
 extension FirstViewController: SecondControllerDelegate {
+    
     func labelColor(_ color: String) {
-    firstLabelVC.text = "\(color)"
+        firstLabelVC.text = "\(color)"   
+    }
+    
+    func screenColorRed(_ rgb: UIColor) {
+        view.backgroundColor = .red
+    }
+    
+    func screenColorGreen(_ rgb: UIColor) {
+        view.backgroundColor = .green
+    }
+    
+    func screenColorBlue(_ rgb: UIColor) {
+        view.backgroundColor = .blue
     }
 }

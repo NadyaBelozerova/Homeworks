@@ -7,39 +7,28 @@
 //
 
 import UIKit
+
 protocol ChildViewControllerDelegate: AnyObject {
     
-    func changeColor()
-    func changeColor2()
-    func changeColor3()
-    
-    
+    func changeColor(_ color1: UIColor)
+    func changeColor2(_ color2: UIColor)
+    func changeColor3(_ color3: UIColor)
 }
 
 class ChildViewController: UIViewController {
     
 weak var delegate: ChildViewControllerDelegate?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        guard let color1 = ColorPallete(rawValue: sender.tag-6) else { return }
+        delegate?.changeColor(color1.rgb)
+        
+        guard let color2 = ColorPallete(rawValue: sender.tag-7) else { return }
+        delegate?.changeColor2(color2.rgb)
+        
+        guard let color3 = ColorPallete(rawValue: sender.tag-8) else { return }
+        delegate?.changeColor3(color3.rgb)
+        
     }
-    
-
-    @IBAction func greenButton() {
-        delegate?.changeColor()
-    }
-    
-    
-    @IBAction func yellowButton() {
-        delegate?.changeColor2()
-    }
-    
-    
-    
-    @IBAction func purpleButton() {
-        delegate?.changeColor3()
-    }
-    
 }
+
