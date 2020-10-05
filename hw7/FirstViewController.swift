@@ -27,15 +27,7 @@ extension FirstViewController: SecondControllerDelegate {
         firstLabelVC.text = "\(color)"   
     }
     
-    func screenColorRed(_ rgb: UIColor) {
-        view.backgroundColor = .red
-    }
-    
-    func screenColorGreen(_ rgb: UIColor) {
-        view.backgroundColor = .green
-    }
-    
-    func screenColorBlue(_ rgb: UIColor) {
-        view.backgroundColor = .blue
+    func changeColor(_ color1: ColorPallete) {
+        view.backgroundColor = color1.rgb
     }
 }

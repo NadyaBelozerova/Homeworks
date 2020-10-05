@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ParentViewController: UIViewController {
 
     var childController: ChildViewController?
@@ -18,30 +19,19 @@ class ParentViewController: UIViewController {
             childController.delegate = self
         }
     }
-
-    @IBAction func greenButton() {
-        childController?.view.backgroundColor = .green
-    }
     
-    @IBAction func yellowButton() {
-        childController?.view.backgroundColor = .yellow
-    }
-    
-    @IBAction func purpleButton() {
-        childController?.view.backgroundColor = .purple
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        guard let color = ColorPallete(rawValue: sender.tag) else { return }
+        childController?.view.backgroundColor = color.rgb
     }
 }
 
 extension ParentViewController: ChildViewControllerDelegate {
-    func changeColor(_ color1: UIColor) {
-        view.backgroundColor = .green
-    }
-    func changeColor2(_ color2: UIColor) {
-        view.backgroundColor = .yellow
-    }
-    func changeColor3(_ color3: UIColor) {
-        view.backgroundColor = .purple
+    func changeColor(_ color: ColorPallete) {
+        view.backgroundColor = color.rgb
     }
 }
+
+
 
 

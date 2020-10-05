@@ -10,9 +10,8 @@ import UIKit
 
 protocol SecondControllerDelegate{
     func labelColor(_ color: String)
-    func screenColorRed(_ rgb: UIColor)
-    func screenColorGreen(_ rgb: UIColor)
-    func screenColorBlue(_ rgb: UIColor)
+    
+    func changeColor(_ color1: ColorPallete)
 }
 
 class SecondViewController: UIViewController {
@@ -28,21 +27,13 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-            guard let color = ColorPallete(rawValue: sender.tag) else { return }
-         delegate?.labelColor(color.selectedDescription)
+        guard let color = ColorPallete(rawValue: sender.tag) else { return }
+        delegate?.labelColor(color.selectedDescription)
         
-       guard let color1 = ColorPallete(rawValue: sender.tag-0) else { return }
-        delegate?.screenColorRed(color1.rgb)
+        guard let color1 = ColorPallete(rawValue: sender.tag) else { return }
+        delegate?.changeColor(color1)
         dismiss(animated: true)
-        
-        guard let color2 = ColorPallete(rawValue: sender.tag-1) else { return }
-        delegate?.screenColorGreen(color2.rgb)
-        dismiss(animated: true)
-        
-        guard let color3 = ColorPallete(rawValue: sender.tag-2) else { return }
-        delegate?.screenColorBlue(color3.rgb)
-            dismiss(animated: true)
-        }
-
+   }
 }
+
 

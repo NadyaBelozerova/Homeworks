@@ -115,13 +115,13 @@
                                     <segue destination="ROj-MT-FKR" kind="embed" identifier="Next2" id="ANf-Mn-3yY"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-IE-wwE">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-IE-wwE">
                                 <rect key="frame" x="33" y="208" width="80" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Зеленый"/>
                                 <connections>
-                                    <action selector="greenButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="2Vf-M3-eEJ"/>
+                                    <action selector="buttonPressed:" destination="Giy-TJ-mfR" eventType="touchUpInside" id="Xmb-cQ-P7l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmE-bY-SEA">
@@ -130,7 +130,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Желтый"/>
                                 <connections>
-                                    <action selector="yellowButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="3zf-o8-wfZ"/>
+                                    <action selector="buttonPressed:" destination="Giy-TJ-mfR" eventType="touchUpInside" id="LWF-Z9-zzS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-n4-AfX">
@@ -139,7 +139,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Пурпурный"/>
                                 <connections>
-                                    <action selector="purpleButton" destination="Giy-TJ-mfR" eventType="touchUpInside" id="YMz-qn-0Kw"/>
+                                    <action selector="buttonPressed:" destination="Giy-TJ-mfR" eventType="touchUpInside" id="bny-XR-Cln"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -161,31 +161,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dX-SA-pk4">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dX-SA-pk4">
                                 <rect key="frame" x="150" y="113" width="80" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Зеленый"/>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="mDG-u5-tjg"/>
+                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="DnU-Ze-gjh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5j-pC-QLV">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5j-pC-QLV">
                                 <rect key="frame" x="156" y="199" width="75" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Желтый"/>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="5sE-ln-ocY"/>
+                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="sjp-UL-p2z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-DY-hC6">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-DY-hC6">
                                 <rect key="frame" x="144" y="276" width="105" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Пурпурный"/>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="hdF-df-14Q"/>
+                                    <action selector="buttonPressed:" destination="ROj-MT-FKR" eventType="touchUpInside" id="gH7-YN-vcB"/>
                                 </connections>
                             </button>
                         </subviews>
