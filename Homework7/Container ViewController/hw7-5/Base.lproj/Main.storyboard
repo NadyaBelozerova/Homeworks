@@ -126,7 +126,8 @@
                     <view key="view" contentMode="scaleToFill" id="cQ5-YS-G38">
                         <rect key="frame" x="0.0" y="0.0" width="420" height="265"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="3Aq-Lf-7Yl"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MO-8g-fu5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
