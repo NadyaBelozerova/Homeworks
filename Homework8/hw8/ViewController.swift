@@ -9,16 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-@IBOutlet weak var imageView: UIImageView!
-
-@IBOutlet weak var prevButton: UIButton!
-        
-@IBOutlet weak var nextButton: UIButton!
-
-var imageNumber = 0
     
-override func viewDidLoad() {
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var prevButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
+    var imageNumber = 0
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "image_1")
         prevButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
@@ -58,12 +58,12 @@ override func viewDidLoad() {
         default: break
         }
     }
-   
+    
     @IBAction func prevButton(_ sender: Any) {
         imageNumber -= 1
         self.gallery()
     }
-
+    
     @IBAction func nextButton(_ sender: Any) {
         imageNumber += 1
         self.gallery()
