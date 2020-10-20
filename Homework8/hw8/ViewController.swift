@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     var imageNumber = 0
     
+    var images = ["image_1", "image_2", "image_3", "image_4", "image_5", "image_6", "image_7", "image_8", "image_9", "image_0"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "image_1")
@@ -29,34 +31,25 @@ class ViewController: UIViewController {
         imageNumber = 1
     }
     
+    
     func gallery(){
-        switch imageNumber {
-        case 1:
-            prevButton.isEnabled = false
-            imageView.image = UIImage(named: "image_1")
-        case 2:
-            prevButton.isEnabled = true
-            imageView.image = UIImage(named: "image_2")
-        case 3:
-            imageView.image = UIImage(named: "image_3")
-        case 4:
-            imageView.image = UIImage(named: "image_4")
-        case 5:
-            imageView.image = UIImage(named: "image_5")
-        case 6:
-            imageView.image = UIImage(named: "image_6")
-        case 7:
-            imageView.image = UIImage(named: "image_7")
-        case 8:
-            imageView.image = UIImage(named: "image_8")
-        case 9:
-            nextButton.isEnabled = true
-            imageView.image = UIImage(named: "image_9")
-        case 10:
-            nextButton.isEnabled = false
-            imageView.image = UIImage(named: "image_0")
-        default: break
+        
+        for (index, value) in images.enumerated(){
+            if imageNumber == index + 1 {
+                imageView.image = UIImage(named: images[index])       
+            }
+     
+            if imageNumber == 1 {
+                prevButton.isEnabled = false
+            } else if imageNumber == 2 {
+                prevButton.isEnabled = true
+            } else if imageNumber == 10 {
+                nextButton.isEnabled = false
+            } else if imageNumber == 9 {
+                nextButton.isEnabled = true
+            }
         }
+        
     }
     
     @IBAction func prevButton(_ sender: Any) {
