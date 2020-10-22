@@ -15,29 +15,11 @@ class ViewController3: UIViewController {
     @IBOutlet weak var view3: UIView!
     
     @IBAction func segment(_ sender: UISegmentedControl){
-        switch sender.selectedSegmentIndex {
-        case 0:
-            view1.isHidden = false
-            view2.isHidden = true
-            view3.isHidden = true
-        case 1:
-            view1.isHidden = true
-            view2.isHidden = false
-            view3.isHidden = true
-        case 2:
-            view1.isHidden = true
-            view2.isHidden = true
-            view3.isHidden = false
-        default: break
+        for (index, view) in [view1, view2, view3].enumerated() {
+            
+            guard let viewUnwrapped = view else { return }
+            viewUnwrapped.isHidden = index != sender.selectedSegmentIndex
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view1.isHidden = false
-        view2.isHidden = true
-        view3.isHidden = true
-        
     }
 }
 

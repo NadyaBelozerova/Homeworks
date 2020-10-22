@@ -10,65 +10,42 @@ import UIKit
 
 class ViewController2: UIViewController {
     
-    var imgArray = [UIImage]()
-    
-    let labelsText = ["Лейбл 1", "Лейбл 2", "Лейбл 3", "Лейбл 4"]
+    struct Image {
+        let raw: UIImage?
+        let text: String
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgArray = [#imageLiteral(resourceName: "image_7"), #imageLiteral(resourceName: "image_8"), #imageLiteral(resourceName: "image_5"), #imageLiteral(resourceName: "image_1")]
         
-        let width = 170
-        let height = 250
-        var pointX = 0
-        var pointY = 0
-         
-        for index in 0..<imgArray.count {
+        let images = [Image(raw: UIImage(named: "image_7"), text: "Лейбл 1"), Image(raw: UIImage(named: "image_8"), text: "Лейбл 2"), Image(raw: UIImage(named: "image_5"), text: "Лейбл 3"), Image(raw: UIImage(named: "image_1"), text: "Лейбл 4")]
+        
+        var x = 20
+        var y = -200
+        let width = 120
+        let height = 180
+        
+        for (index, image) in images.enumerated() {
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+            imageView.image = images[index].raw
+            let label = UILabel(frame: CGRect(x: 0, y: 180, width: width, height: height / 5))
+            label.text = images[index].text
             
-            if index == 0 || index == 2 {
-                pointX = 30
-                
-            } else if index == 1 || index == 3 {
-                pointX = 220
-            }
-            
-            pointY = height + 150
-            
-            let imageView = UIImageView()
-            imageView.image = imgArray[index]
-            
-            if index == 0 || index == 1 {
-                imageView.frame = CGRect(x: pointX, y: 100, width: width, height: height)
+            if index % 2 == 0 {
+                x = 20
+                y += 280
             } else {
-                imageView.frame = CGRect(x: pointX, y: pointY, width: width, height: height)
+                x = 170
             }
             
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
-            view.addSubview(imageView)
-        }
-        
-        for index in 0..<labelsText.count {
+            let frameForContainer = CGRect(x: x, y: y, width: width, height: height)
             
-            if index == 0 || index == 2 {
-                pointX = 30
-                
-            } else if index == 1 || index == 3 {
-                pointX = 220
-            }
-            
-            pointY = height + 150
-            
-            let labels = UILabel()
-            labels.text = labelsText[index]
-            
-            if index == 0 || index == 1 {
-                labels.frame = CGRect(x: pointX, y: 360, width: width, height: 30)
-            } else {
-                labels.frame = CGRect(x: pointX, y: 660, width: width, height: 30)
-            }
-            
-            view.addSubview(labels)
+            let containerViewForImageAndLabel = UIView(frame: frameForContainer)
+            containerViewForImageAndLabel.addSubview(imageView) //
+            containerViewForImageAndLabel.addSubview(label)
+            view.addSubview(containerViewForImageAndLabel)
         }
     }
 }
