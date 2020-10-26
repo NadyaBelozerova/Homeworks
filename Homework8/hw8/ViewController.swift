@@ -20,11 +20,6 @@ class ViewController: UIViewController {
     
     var images = ["image_1", "image_2", "image_3", "image_4", "image_5", "image_6", "image_7", "image_8", "image_9", "image_0"]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        imageNumber = 0
-    }
-    
     func gallery(){
         
         imageView.image = UIImage(named: images[imageNumber])

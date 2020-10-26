@@ -16,9 +16,7 @@ class ViewController3: UIViewController {
     
     @IBAction func segment(_ sender: UISegmentedControl){
         for (index, view) in [view1, view2, view3].enumerated() {
-            
-            guard let viewUnwrapped = view else { return }
-            viewUnwrapped.isHidden = index != sender.selectedSegmentIndex
+            view?.isHidden = index != sender.selectedSegmentIndex
         }
     }
 }

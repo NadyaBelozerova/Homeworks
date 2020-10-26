@@ -21,19 +21,19 @@ class ViewController2: UIViewController {
         let images = [Image(raw: UIImage(named: "image_7"), text: "Лейбл 1"), Image(raw: UIImage(named: "image_8"), text: "Лейбл 2"), Image(raw: UIImage(named: "image_5"), text: "Лейбл 3"), Image(raw: UIImage(named: "image_1"), text: "Лейбл 4")]
         
         var x = 20
-        var y = -200
+        var y = -180
         let width = 120
         let height = 180
         
         for (index, image) in images.enumerated() {
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-            imageView.image = images[index].raw
+            imageView.image = image.raw
             let label = UILabel(frame: CGRect(x: 0, y: 180, width: width, height: height / 5))
-            label.text = images[index].text
+            label.text = image.text
             
             if index % 2 == 0 {
                 x = 20
-                y += 280
+                y += 240
             } else {
                 x = 170
             }
