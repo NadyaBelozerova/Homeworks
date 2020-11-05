@@ -9,20 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var label1: UILabel!
-
+    
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    @IBAction func button1(_ sender: Any) {
+    
+    var counter = 0
+    @IBAction func button(_ sender: Any) {
         
-        heightConstraint.constant += 50
+        counter += 1
+        
+        if counter % 2 == 0 {
+            heightConstraint.constant -= 150
+        }else {
+            heightConstraint.constant += 150
+        }
+        
         view.layoutIfNeeded()
     }
-    
 }
 
