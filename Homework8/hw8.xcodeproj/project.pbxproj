@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292DCA29257BD48C00AB32FF /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DCA28257BD48C00AB32FF /* SwitchViewController.swift */; };
+		292DCA2E257BE49800AB32FF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DCA2D257BE49800AB32FF /* DatePickerViewController.swift */; };
 		29A117C42528B41C006323CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A117C32528B41C006323CA /* AppDelegate.swift */; };
 		29A117C62528B41C006323CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A117C52528B41C006323CA /* SceneDelegate.swift */; };
 		29A117C82528B41C006323CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A117C72528B41C006323CA /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		292DCA28257BD48C00AB32FF /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
+		292DCA2D257BE49800AB32FF /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		29A117C02528B41C006323CA /* hw8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A117C32528B41C006323CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29A117C52528B41C006323CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				29A117F32528B6FB006323CA /* ViewController2.swift */,
 				29A117F52528B731006323CA /* ViewController3.swift */,
 				29A117C92528B41C006323CA /* Main.storyboard */,
+				292DCA2D257BE49800AB32FF /* DatePickerViewController.swift */,
+				292DCA28257BD48C00AB32FF /* SwitchViewController.swift */,
 				29A117CC2528B41E006323CA /* Assets.xcassets */,
 				29A117CE2528B41E006323CA /* LaunchScreen.storyboard */,
 				29A117D12528B41E006323CA /* Info.plist */,
@@ -265,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				292DCA29257BD48C00AB32FF /* SwitchViewController.swift in Sources */,
 				29A117F62528B731006323CA /* ViewController3.swift in Sources */,
+				292DCA2E257BE49800AB32FF /* DatePickerViewController.swift in Sources */,
 				29A117C82528B41C006323CA /* ViewController.swift in Sources */,
 				29A117F42528B6FB006323CA /* ViewController2.swift in Sources */,
 				29A117C42528B41C006323CA /* AppDelegate.swift in Sources */,
