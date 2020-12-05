@@ -15,6 +15,8 @@ class SettingsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconOfSetting: UIImageView!
     
+    @IBOutlet weak var planeModeSwitch: UISwitch!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

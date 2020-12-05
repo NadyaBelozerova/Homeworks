@@ -54,6 +54,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.labelOfSettings.text = setName3
         cell.iconOfSetting.image = setName2
         
+        if indexPath.section == 0 && indexPath.row == 0 {
+            cell.accessoryType = .none
+         
+         } else {
+            cell.accessoryType = .disclosureIndicator
+            cell.planeModeSwitch.isHidden = true
+         }
         return cell
         
     }
