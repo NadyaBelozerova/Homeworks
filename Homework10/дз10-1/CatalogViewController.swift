@@ -11,30 +11,35 @@ class CatalogViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var images = [UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3"), UIImage(named: "image4"), UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3"), UIImage(named: "image4")]
+    struct Product {
+        let images: UIImage?
+        let labels: String
+        let price: String
+        let newPrice: String
+        var discount: String
+    }
     
-    var labels = ["Пуховик Black star 13", "Бомбер Bs Sketch", "Детская куртка", "Кепка", "Пуховик Black star 13", "Бомбер Bs Sketch", "Детская куртка", "Кепка"]
-    
-    var price = ["13500 руб", "3900 руб", "11500 руб", "2000 руб", "13500 руб", "3900 руб", "11500 руб", "2000 руб"]
-    
-    var newPrice = ["4900 руб", "2490 руб", "5000 руб", "1500 руб", "4900 руб", "2490 руб", "5000 руб", "1500 руб"]
-    
-    var discount = ["30%", "30%", "30%", "30%", "30%", "30%", "30%", "30%"]
-    
+    var products = [
+        Product(images: UIImage(named: "image1"), labels: "Пуховик Black star 13", price: "13500 руб", newPrice: "4900 руб", discount: "30%"), Product(images: UIImage(named: "image2"), labels: "Бомбер Bs Sketch", price: "3900 руб", newPrice: "2490 руб", discount: "30%"), Product(images: UIImage(named: "image3"), labels: "Детская куртка", price: "11500 руб", newPrice: "5000 руб", discount: "30%"), Product(images: UIImage(named: "image4"), labels: "Кепка", price: "2000 руб", newPrice: "1500 руб", discount: "30%"), Product(images: UIImage(named: "image1"), labels: "Пуховик Black star 13", price: "13500 руб", newPrice: "4900 руб", discount: "30%"), Product(images: UIImage(named: "image2"), labels: "Бомбер Bs Sketch", price: "3900 руб", newPrice: "2490 руб", discount: "30%"), Product(images: UIImage(named: "image3"), labels: "Детская куртка", price: "11500 руб", newPrice: "5000 руб", discount: "30%"), Product(images: UIImage(named: "image4"), labels: "Кепка", price: "2000 руб", newPrice: "1500 руб", discount: "30%")
+        
+    ]
 }
 
 extension CatalogViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CatalogCollectionViewCell
-        cell.catalogImage.image = images[indexPath.row]
-        cell.catalogLabel.text = labels[indexPath.row]
-        cell.priceLabel.text = price[indexPath.row]
-        cell.newPriceLabel.text = newPrice[indexPath.row]
-        cell.discountLabel.text = discount[indexPath.row]
+        
+        let catalogItem = products[indexPath.row]
+        
+        cell.catalogImage.image = catalogItem.images
+        cell.catalogLabel.text = catalogItem.labels
+        cell.priceLabel.text = catalogItem.price
+        cell.newPriceLabel.text = catalogItem.newPrice
+        cell.discountLabel.text = catalogItem.discount
         return cell
     }
     
