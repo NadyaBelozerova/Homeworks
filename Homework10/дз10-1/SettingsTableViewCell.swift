@@ -15,4 +15,5 @@ class SettingsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconOfSetting: UIImageView!
     
+    @IBOutlet weak var switch1: UISwitch!
 }

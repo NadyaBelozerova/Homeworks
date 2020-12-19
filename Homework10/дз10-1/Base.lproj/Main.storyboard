@@ -21,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Nrw-ry-faz" customClass="SettingsTableViewCell" customModule="дз10_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Nrw-ry-faz" customClass="SettingsTableViewCell" customModule="дз10_1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nrw-ry-faz" id="wM5-Px-cHe">
-                                            <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQr-te-Unh">
@@ -39,19 +39,31 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9y-vh-Il8">
-                                                    <rect key="frame" x="220" y="11" width="127" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9y-vh-Il8">
+                                                    <rect key="frame" x="297.66666666666669" y="11" width="41.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemGray3Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0r-HG-OOa">
+                                                    <rect key="frame" x="310" y="5.9999999999999982" width="51" height="31.333333333333329"/>
+                                                </switch>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="g0r-HG-OOa" secondAttribute="bottom" constant="6.6699999999999999" id="8pO-1h-PcT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="v9y-vh-Il8" secondAttribute="trailing" constant="20" id="9vi-3P-oSR"/>
+                                                <constraint firstItem="v9y-vh-Il8" firstAttribute="top" secondItem="wM5-Px-cHe" secondAttribute="topMargin" id="QPs-rS-PfU"/>
+                                                <constraint firstItem="g0r-HG-OOa" firstAttribute="top" secondItem="wM5-Px-cHe" secondAttribute="top" constant="6" id="ayl-JS-EHU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="v9y-vh-Il8" secondAttribute="bottom" constant="1" id="dob-1J-Nmy"/>
+                                                <constraint firstAttribute="trailing" secondItem="g0r-HG-OOa" secondAttribute="trailing" constant="16" id="g7k-fC-mmZ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="iconOfSetting" destination="tQr-te-Unh" id="PbQ-Ki-AdJ"/>
                                             <outlet property="labelOfSettings" destination="v9y-vh-Il8" id="L6q-Am-7hB"/>
                                             <outlet property="nameOfSetting" destination="qd7-0h-3Iq" id="0KW-1f-6hM"/>
+                                            <outlet property="switch1" destination="g0r-HG-OOa" id="1To-az-ee5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

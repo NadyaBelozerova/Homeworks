@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CCD6104C-AFBF-47C9-932C-85CE522FFED2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63C12336-FFE1-4534-A753-1C118D6813E5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x434;&#x437;10-1/SettingsTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "SettingsTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "63C12336-FFE1-4534-A753-1C118D6813E5 - 144cc78ef29537e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x434;&#x437;10_1.SettingsTableViewCell.iconOfSetting.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "&#x434;&#x437;10-1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nadyabelozerova/Documents/GitHub/homeworks/Homework10/%D0%B4%D0%B710-1/SettingsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "63C12336-FFE1-4534-A753-1C118D6813E5 - f84a213a2bf31bd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x434;&#x437;10_1.SettingsTableViewCell.iconOfSetting.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "&#x434;&#x437;10-1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nadyabelozerova/Documents/GitHub/homeworks/Homework10/%D0%B4%D0%B710-1/SettingsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "63C12336-FFE1-4534-A753-1C118D6813E5 - 11588cae45596e96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x434;&#x437;10_1.SettingsTableViewCell.iconOfSetting.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "&#x434;&#x437;10-1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nadyabelozerova/Documents/GitHub/homeworks/Homework10/%D0%B4%D0%B710-1/SettingsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "63C12336-FFE1-4534-A753-1C118D6813E5 - 7917dce363b2dbe2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x434;&#x437;10_1.SettingsTableViewCell.iconOfSetting.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "&#x434;&#x437;10-1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nadyabelozerova/Documents/GitHub/homeworks/Homework10/%D0%B4%D0%B710-1/SettingsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "63C12336-FFE1-4534-A753-1C118D6813E5 - 540bace094906eaa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x434;&#x437;10_1.SettingsTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; &#x434;&#x437;10_1.SettingsTableViewCell"
+                  moduleName = "&#x434;&#x437;10-1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nadyabelozerova/Documents/GitHub/homeworks/Homework10/%D0%B4%D0%B710-1/SettingsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "485">
+               </Location>
+               <Location
+                  uuid = "63C12336-FFE1-4534-A753-1C118D6813E5 - 400b9aca9d1e184b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x434;&#x437;10_1.SettingsTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;&#x434;&#x437;10_1.SettingsTableViewCell&gt;"
+                  moduleName = "&#x434;&#x437;10-1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nadyabelozerova/Documents/GitHub/homeworks/Homework10/%D0%B4%D0%B710-1/SettingsTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "426">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

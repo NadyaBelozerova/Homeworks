@@ -11,14 +11,28 @@ struct Setting {
     let name: String
     let icon: UIImage?
     let label: String
-    let switchButton = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    let isSwitchHidden: Bool
+    let accessoryType1: UITableViewCell.AccessoryType
+ 
 }
 
 class ViewController: UIViewController {
     
     var settings = [
-        Setting(name: "Авиарежим", icon: #imageLiteral(resourceName: "planemode"), label: ""),
-        Setting(name: "Wi-Fi", icon: #imageLiteral(resourceName: "wifi"), label: "Anvics-YOTA"), Setting(name: "Bluetooth", icon: #imageLiteral(resourceName: "bluetooth"), label: "Вкл."), Setting(name: "Сотовая связь", icon: #imageLiteral(resourceName: "mobilenet"), label: ""), Setting(name: "Режим модема", icon: #imageLiteral(resourceName: "modemmode"), label: ""), Setting(name: "", icon: nil, label: ""), Setting(name: "Уведомления", icon: #imageLiteral(resourceName: "notes"), label: ""), Setting(name: "Звуки, тактильные сигналы", icon: #imageLiteral(resourceName: "sounds"), label: ""), Setting(name: "Не беспокоить", icon: #imageLiteral(resourceName: "dontdist"), label: ""), Setting(name: "Экранное время", icon: #imageLiteral(resourceName: "screentime"), label: ""), Setting(name: "", icon: nil, label: ""), Setting(name: "Основные", icon: #imageLiteral(resourceName: "main"), label: ""), Setting(name: "Пункт управления", icon: #imageLiteral(resourceName: "commandcenter"), label: ""), Setting(name: "Экран и яркость", icon: #imageLiteral(resourceName: "screen"), label: "")
+        Setting(name: "Авиарежим", icon: #imageLiteral(resourceName: "planemode"), label: "", isSwitchHidden: false, accessoryType1: .none),
+        Setting(name: "Wi-Fi", icon: #imageLiteral(resourceName: "wifi"), label: "Anvics-YOTA", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "Bluetooth", icon: #imageLiteral(resourceName: "bluetooth"), label: "Вкл.", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "Сотовая связь", icon: #imageLiteral(resourceName: "mobilenet"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "Режим модема", icon: #imageLiteral(resourceName: "modemmode"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "", icon: nil, label: "", isSwitchHidden: true, accessoryType1: .none),
+        Setting(name: "Уведомления", icon: #imageLiteral(resourceName: "notes"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "Звуки, тактильные сигналы", icon: #imageLiteral(resourceName: "sounds"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "Не беспокоить", icon: #imageLiteral(resourceName: "dontdist"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "Экранное время", icon: #imageLiteral(resourceName: "screentime"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "", icon: nil, label: "", isSwitchHidden: true, accessoryType1: .none),
+        Setting(name: "Основные", icon: #imageLiteral(resourceName: "main"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "Пункт управления", icon: #imageLiteral(resourceName: "commandcenter"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator),
+        Setting(name: "Экран и яркость", icon: #imageLiteral(resourceName: "screen"), label: "", isSwitchHidden: true, accessoryType1: .disclosureIndicator)
     ]
 }
 
@@ -40,23 +54,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameOfSetting.text = setName.name
         cell.labelOfSettings.text = setName.label
         cell.iconOfSetting.image = setName.icon
-        cell.addSubview(setName.switchButton)
-        
-        setName.switchButton.translatesAutoresizingMaskIntoConstraints = false
-        let margins = cell.layoutMarginsGuide
-        setName.switchButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
-        
-        setName.switchButton.centerYAnchor.constraint(equalTo: margins.centerYAnchor, constant: 0).isActive = true
-        
-        if indexPath.row == 0 {
-            cell.accessoryType = .none
-        } else if indexPath.row == 5 || indexPath.row == 10 {
-            cell.accessoryType = .none
-            setName.switchButton.isHidden = true
+        cell.switch1.isHidden = setName.isSwitchHidden
+        cell.accessoryType = setName.accessoryType1
+   
+        if setName.icon == nil {
             cell.backgroundColor = #colorLiteral(red: 0.9492684007, green: 0.9486895204, blue: 0.9704379439, alpha: 1)
         } else {
-            setName.switchButton.isHidden = true
+            cell.backgroundColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.9998808503, alpha: 1)
         }
+        
         return cell
     }
 }
