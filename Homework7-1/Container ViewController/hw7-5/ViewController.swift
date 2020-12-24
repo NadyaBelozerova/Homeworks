@@ -8,14 +8,14 @@
 
 import UIKit
 
+var firstVC = FirstChildVC()
+var secondVC = SecondChildVC()
+var thirdVC = ThirdChildVC()
+
 class ViewController: UIViewController {
-    
-    var button1 = UIButton()
-    var button2 = UIButton()
-    var button3 = UIButton()
-    
+
     lazy var stackViewButtons: UIStackView = {
-        let stackV = UIStackView(arrangedSubviews: [button1, button2, button3])
+        let stackV = UIStackView(arrangedSubviews: [])
         stackV.translatesAutoresizingMaskIntoConstraints = false
         stackV.axis = .horizontal
         stackV.spacing = 10
@@ -23,13 +23,9 @@ class ViewController: UIViewController {
         
         return stackV
     }()
-    
-    var firstVC = FirstChildVC()
-    var secondVC = SecondChildVC()
-    var thirdVC = ThirdChildVC()
-    
+
     lazy var stackViewChildVC: UIStackView = {
-        let stackV2 = UIStackView(arrangedSubviews: [firstVC.view, secondVC.view, thirdVC.view])
+        let stackV2 = UIStackView(arrangedSubviews: [])
         stackV2.translatesAutoresizingMaskIntoConstraints = false
         stackV2.axis = .vertical
         stackV2.spacing = 0
@@ -38,37 +34,21 @@ class ViewController: UIViewController {
         return stackV2
     }()
     
-    private var childs: [UIViewController] = [FirstChildVC(), SecondChildVC(), ThirdChildVC()]
+    private var childs: [UIViewController] = []
     
     private var defaultVC = DefaultVC()
     
-    func addVC(_ vc: UIViewController, buttonTitle: String) {
-        assert(childs.count < 6, "Too many child ViewControllers: only 6 allowed")
-        
-        button1.backgroundColor = .gray
-        button1.setTitle("One", for: .normal)
-        button1.setTitleColor(.black, for: .normal)
-        button1.addTarget(self, action: #selector(showHideContentVC), for: .touchUpInside)
-        
-        button2.backgroundColor = .gray
-        button2.setTitle("Two", for: .normal)
-        button2.setTitleColor(.black, for: .normal)
-        button2.addTarget(self, action: #selector(showHideContentVC), for: .touchUpInside)
-        
-        button3.backgroundColor = .gray
-        button3.setTitle("Three", for: .normal)
-        button3.setTitleColor(.black, for: .normal)
-        button3.addTarget(self, action: #selector(showHideContentVC), for: .touchUpInside)
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
         view.addSubview(stackViewChildVC)
         view.addSubview(stackViewButtons)
         
         NSLayoutConstraint.activate([
             
-            stackViewChildVC.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stackViewChildVC.topAnchor.constraint(equalTo: stackViewButtons.bottomAnchor),
             stackViewChildVC.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             stackViewChildVC.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            stackViewChildVC.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1),
+            stackViewChildVC.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.9),
             stackViewChildVC.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
         ])
         
@@ -80,6 +60,20 @@ class ViewController: UIViewController {
             stackViewButtons.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07),
             
         ])
+        
+    }
+
+    func addVC(_ vc: UIViewController, buttonTitle: String) {
+        assert(childs.count < 6, "Too many child ViewControllers: only 6 allowed")
+        
+        childs.append(vc)
+        
+        let button1 = UIButton()
+        button1.backgroundColor = .gray
+        button1.setTitle(buttonTitle, for: .normal)
+        button1.setTitleColor(.black, for: .normal)
+        button1.addTarget(self, action: #selector(showHideContentVC), for: .touchUpInside)
+        stackViewButtons.addArrangedSubview(button1)
     }
     
     
@@ -89,48 +83,33 @@ class ViewController: UIViewController {
     }
     
     @objc private func showHideContentVC(_ sender: UIButton) {
-        if sender == button1 {
-            if button1.backgroundColor == UIColor.blue {
-                button1.backgroundColor = UIColor.gray
-                firstVC.view.isHidden = false
-            } else if button1.backgroundColor == UIColor.gray {
-                button1.backgroundColor = UIColor.blue
-                firstVC.view.isHidden = true
-            }
-        } else if sender == button2 {
-            if button2.backgroundColor == UIColor.blue {
-                button2.backgroundColor = UIColor.gray
-                secondVC.view.isHidden = false
-            } else if button2.backgroundColor == UIColor.gray {
-                button2.backgroundColor = UIColor.blue
-                secondVC.view.isHidden = true
-            }
-        } else if sender == button3 {
-            if button3.backgroundColor == UIColor.blue {
-                button3.backgroundColor = UIColor.gray
-                thirdVC.view.isHidden = false
-            }
-            else if button3.backgroundColor == UIColor.gray {
-                button3.backgroundColor = UIColor.blue
-                thirdVC.view.isHidden = true
-            }
-            
-        if firstVC.view.isHidden == true && secondVC.view.isHidden == true && thirdVC.view.isHidden == true {
-                setPlaceholder(defaultVC)
+        
+        for (index, _) in childs.enumerated() {
+            if sender == stackViewButtons.arrangedSubviews[index] {
+                if sender.backgroundColor == .gray {
+                    sender.backgroundColor = .blue
+                    showChildVC(childs[index])
+                    hideChildVC(defaultVC)
+                } else if sender.backgroundColor == .blue {
+                    sender.backgroundColor = .gray
+                    hideChildVC(childs[index])
+                    showChildVC(defaultVC)
+                }
             }
         }
     }
     
     private func showChildVC(_ childVC: UIViewController) {
-        // Функция для добавления контроллера в иерархию и его показа
+        self.addChild(childVC)
+        self.stackViewChildVC.addArrangedSubview(childVC.view)
+        childVC.didMove(toParent: self)
+        
     }
     
     private func hideChildVC(_ childVC: UIViewController) {
-        // Функция для удаления контроллера из иерархии и его скрытия
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        childVC.willMove(toParent: self)
+        childVC.view.removeFromSuperview()
+        childVC.removeFromParent()
         
     }
 }
