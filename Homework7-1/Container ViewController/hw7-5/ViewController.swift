@@ -8,12 +8,9 @@
 
 import UIKit
 
-var firstVC = FirstChildVC()
-var secondVC = SecondChildVC()
-var thirdVC = ThirdChildVC()
 
 class ViewController: UIViewController {
-
+    
     lazy var stackViewButtons: UIStackView = {
         let stackV = UIStackView(arrangedSubviews: [])
         stackV.translatesAutoresizingMaskIntoConstraints = false
@@ -23,7 +20,7 @@ class ViewController: UIViewController {
         
         return stackV
     }()
-
+    
     lazy var stackViewChildVC: UIStackView = {
         let stackV2 = UIStackView(arrangedSubviews: [])
         stackV2.translatesAutoresizingMaskIntoConstraints = false
@@ -43,13 +40,14 @@ class ViewController: UIViewController {
         view.addSubview(stackViewChildVC)
         view.addSubview(stackViewButtons)
         
+        
+        
         NSLayoutConstraint.activate([
             
             stackViewChildVC.topAnchor.constraint(equalTo: stackViewButtons.bottomAnchor),
             stackViewChildVC.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             stackViewChildVC.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            stackViewChildVC.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.9),
-            stackViewChildVC.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
+            stackViewChildVC.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -62,7 +60,7 @@ class ViewController: UIViewController {
         ])
         
     }
-
+    
     func addVC(_ vc: UIViewController, buttonTitle: String) {
         assert(childs.count < 6, "Too many child ViewControllers: only 6 allowed")
         
@@ -72,33 +70,38 @@ class ViewController: UIViewController {
         button1.backgroundColor = .gray
         button1.setTitle(buttonTitle, for: .normal)
         button1.setTitleColor(.black, for: .normal)
+        button1.setTitleColor(.red, for: .selected)
         button1.addTarget(self, action: #selector(showHideContentVC), for: .touchUpInside)
         stackViewButtons.addArrangedSubview(button1)
+        
     }
-    
     
     func setPlaceholder(_ vc: UIViewController) {
         addChild(defaultVC)
         view.addSubview(defaultVC.view)
+        
+        
     }
     
     @objc private func showHideContentVC(_ sender: UIButton) {
         
         for (index, _) in childs.enumerated() {
-            if sender == stackViewButtons.arrangedSubviews[index] {
-                if sender.backgroundColor == .gray {
-                    sender.backgroundColor = .blue
+            
+            if sender == stackViewButtons.arrangedSubviews[index]{
+                sender.isSelected.toggle()
+                
+                if sender.isSelected == true {
                     showChildVC(childs[index])
-                    hideChildVC(defaultVC)
-                } else if sender.backgroundColor == .blue {
-                    sender.backgroundColor = .gray
+                    
+                } else {
                     hideChildVC(childs[index])
-                    showChildVC(defaultVC)
                 }
+                
             }
         }
+        
     }
-    
+
     private func showChildVC(_ childVC: UIViewController) {
         self.addChild(childVC)
         self.stackViewChildVC.addArrangedSubview(childVC.view)

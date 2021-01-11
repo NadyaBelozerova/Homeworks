@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
              conVC.addVC(FirstChildVC(), buttonTitle: "one")
             conVC.addVC(SecondChildVC(), buttonTitle: "two")
             conVC.addVC(ThirdChildVC(), buttonTitle: "three")
- 
         
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
