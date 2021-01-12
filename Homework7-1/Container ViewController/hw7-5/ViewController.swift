@@ -85,21 +85,21 @@ class ViewController: UIViewController {
     
     @objc private func showHideContentVC(_ sender: UIButton) {
         
-        for (index, _) in childs.enumerated() {
-            
-            if sender == stackViewButtons.arrangedSubviews[index]{
-                sender.isSelected.toggle()
-                
-                if sender.isSelected == true {
-                    showChildVC(childs[index])
-                    
-                } else {
-                    hideChildVC(childs[index])
-                }
-                
-            }
-        }
+        sender.isSelected.toggle()
+                let index = stackViewButtons.arrangedSubviews.firstIndex(of: sender) ?? 0
+                let childVC = childs[index]
         
+                if sender.isSelected {
+                    showChildVC(childVC)
+                } else {
+                    hideChildVC(childVC)
+                }
+        
+        if stackViewChildVC.arrangedSubviews.count == 0 {
+            showChildVC(defaultVC)
+        } else {
+            hideChildVC(defaultVC)
+        }
     }
 
     private func showChildVC(_ childVC: UIViewController) {
