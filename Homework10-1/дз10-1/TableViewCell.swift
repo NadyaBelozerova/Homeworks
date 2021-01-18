@@ -7,36 +7,35 @@
 
 import UIKit
 
-
-
 class TableViewCell: UITableViewCell {
+    private var album: Album?
     
+    func update(_ album: Album) {
+        self.album = album
+
+      nameOfAlbum.text = album.name
+      photoAlbum.reloadData()
+    }
     
     @IBOutlet weak var photoAlbum: UICollectionView!
     
     @IBOutlet weak var nameOfAlbum: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        photoAlbum.delegate = self
-        photoAlbum.dataSource = self
-        
-        
-    }
 
 }
 
 extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myAlbums[photoAlbum.tag].imageGallery.count
-    }
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return myAlbums[photoAlbum.tag].images.count
+  
+   
+  }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = photoAlbum.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        cell.imageInAlbum.image = myAlbums[photoAlbum.tag].imageGallery[indexPath.row]
-        
+        cell.imageInAlbum.image = myAlbums[photoAlbum.tag].images[indexPath.row]
         return cell
     }
     
@@ -44,3 +43,4 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         return CGSize(width: 210, height: 140)
     }
 }
+
