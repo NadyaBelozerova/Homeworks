@@ -8,11 +8,9 @@
 import UIKit
 
 @IBDesignable class Button: UIButton {
-    
-    var  isSetuped = false
-    
+
     @IBInspectable var radius: CGFloat = 10 {
-        didSet { updateRadius() }
+        didSet { layer.cornerRadius = radius }
     }
     @IBInspectable var borderColor1: UIColor = UIColor.clear {
         didSet {
@@ -21,32 +19,7 @@ import UIKit
     }
     
     @IBInspectable var borderSize: CGFloat = 2 {
-        didSet { updateBorderWidth() }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        
-        layer.cornerRadius = radius
-        layer.borderWidth = borderSize
-        layer.borderColor = borderColor1.cgColor
-        
-        if isSetuped { return }
-        isSetuped = true
-    }
-    
-    
-    func updateRadius() {
-        layer.cornerRadius = 0
-    }
-    
-    func updateBorderWidth() {
-        layer.borderWidth = 0
-    }
-    
-    func updateColor() {
-        layer.borderColor = UIColor.red.cgColor
+        didSet {  layer.borderWidth = borderSize }
     }
 }
 

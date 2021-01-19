@@ -10,13 +10,12 @@ import UIKit
 
 @IBDesignable class ClockView: UIView {
     
-    var  isSetuped = false
     
     var markerSize: CGFloat = 4
     var markerLength: CGFloat = 10
     var markerColor = UIColor.black
     
-    var hours: CGFloat = 3 {
+    var hours: CGFloat = 2 {
         didSet { updateHours() }
     }
     
@@ -76,6 +75,10 @@ import UIKit
     private let secondLine = UIView()
     private let roundedView = UIView()
     
+    
+    
+    
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         hourLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
@@ -89,16 +92,8 @@ import UIKit
         
         roundedView.frame = CGRect(x: w / 2 - 8, y: h / 2 - 8, width: 16, height: 16)
         
-        hourLine.backgroundColor = houreLineColor
-        
-        minuteLine.backgroundColor = minuteLineColor
-        
-        secondLine.backgroundColor = secondLineColor
         
         updateHourLine()
-        
-        roundedView.backgroundColor = roundedViewColor
-        roundedView.layer.cornerRadius = 8
         updateHours()
         
         topMarker.frame = CGRect(x: w / 2 - markerSize / 2, y: 0, width: markerSize, height: markerLength)
@@ -113,9 +108,7 @@ import UIKit
         }
         
         layer.cornerRadius = frame.size.width / 2
-        
-        if isSetuped { return }
-        isSetuped = true
+
         
         for v in [topMarker, leftMarker, rightMarker, bottomMarker, hourLine, roundedView, minuteLine, secondLine] {
             addSubview(v)
